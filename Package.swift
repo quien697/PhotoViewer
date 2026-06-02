@@ -4,21 +4,15 @@
 import PackageDescription
 
 let package = Package(
-    name: "PhotoViewer",
-    products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
-        .library(
-            name: "PhotoViewer",
-            targets: ["PhotoViewer"]
-        ),
-    ],
-    targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "PhotoViewer"
-        ),
-
-    ],
-    swiftLanguageModes: [.v6]
+  name: "PhotoViewer",
+  platforms: [
+    .iOS("26.0")
+  ],
+  products: [
+    .library(name: "PhotoViewer", targets: ["PhotoViewer"])
+  ],
+  targets: [
+    .target(name: "PhotoViewer")
+  ],
+  swiftLanguageModes: [.v6]
 )
