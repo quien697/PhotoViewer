@@ -10,7 +10,7 @@ import SwiftUI
 /// The bottom thumbnail strip of `PhotoViewer`; tapping a thumbnail selects its
 /// photo and the selected one is outlined with `highlightColor`.
 struct PhotoViewerFooter: View {
-  let photos: [String]
+  let sources: [PhotoSource]
   @Binding var selectedIndex: Int
   let highlightColor: Color
 
@@ -18,17 +18,10 @@ struct PhotoViewerFooter: View {
     ScrollViewReader { proxy in
       ScrollView(.horizontal, showsIndicators: false) {
         HStack(spacing: 6) {
-          ForEach(photos.indices, id: \.self) { index in
-            AsyncImage(url: URL(string: photos[index])) { phase in
-              switch phase {
-              case .success(let image):
-                image
-                  .resizable()
-                  .scaledToFill()
-              default:
-                Color.gray.opacity(0.3)
-              }
-            }  // ForEach
+          ForEach(sources.indices, id: \.self) { index in
+            PhotoSourceImage(source: sources[index], contentMode: .fill) {
+              Color.gray.opacity(0.3)
+            }
             .frame(width: 60, height: 48)
             .clipShape(RoundedRectangle(cornerRadius: 6))
             .overlay(
@@ -57,7 +50,7 @@ struct PhotoViewerFooter: View {
 
 #Preview {
   PhotoViewerFooter(
-    photos: [],
+    sources: [],
     selectedIndex: .constant(0),
     highlightColor: .accentColor
   )
