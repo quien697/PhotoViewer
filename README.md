@@ -16,6 +16,31 @@ A lightweight SwiftUI view for browsing photos full-screen on iOS, from remote U
 
 
 
+## 📸 Screenshots
+
+<table>
+  <tr>
+    <th>Gallery</th>
+    <th>Full-screen viewer</th>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/quien697/PhotoViewer/main/Screenshots/photo_viewer-url_tab.png" alt="Gallery with remote URL photos" width="260"></td>
+    <td><img src="https://raw.githubusercontent.com/quien697/PhotoViewer/main/Screenshots/photo_viewer-url_viewer.png" alt="Full-screen viewer for a remote URL photo" width="260"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><em>Remote URLs — tap a thumbnail to open the photo full-screen with a swipeable thumbnail strip.</em></td>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/quien697/PhotoViewer/main/Screenshots/photo_viewer-uiimage_tab.png" alt="Gallery with in-memory UIImages" width="260"></td>
+    <td><img src="https://raw.githubusercontent.com/quien697/PhotoViewer/main/Screenshots/photo_viewer-uiimage_viewer.png" alt="Full-screen viewer for an in-memory UIImage" width="260"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><em>In-memory <code>UIImage</code>s — the same viewer, driven by decoded images.</em></td>
+  </tr>
+</table>
+
+
+
 ## ✨ Features
 
 1. **Flexible sources** — supply photos as remote URLs (`[String]`) or in-memory images (`[UIImage]`).
