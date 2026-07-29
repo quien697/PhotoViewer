@@ -12,7 +12,7 @@ A lightweight SwiftUI view for browsing photos full-screen on iOS, from remote U
 2. Accepts photos as remote URLs or in-memory `UIImage`s through two matching initializers.
 3. Pages through photos full-screen with a swipeable, paged `TabView`.
 4. Provides a thumbnail strip that scrolls to and highlights the selected photo.
-5. Built with pure SwiftUI and no third-party dependencies.
+5. Built with SwiftUI, using [CachedAsyncImage](https://github.com/quien697/CachedAsyncImage) for cached remote image loading.
 
 
 
@@ -21,7 +21,7 @@ A lightweight SwiftUI view for browsing photos full-screen on iOS, from remote U
 1. **Flexible sources** — supply photos as remote URLs (`[String]`) or in-memory images (`[UIImage]`).
 2. **Paged browsing** — swipe horizontally to move between full-screen photos.
 3. **Thumbnail strip** — tap a thumbnail to jump to its photo; the strip auto-scrolls to keep the selection centered.
-4. **Async loading** — remote images load via `AsyncImage` with progress and placeholder states.
+4. **Async loading** — remote images load via `CachedAsyncImage` with progress and placeholder states, cached in memory and on disk.
 5. **Customizable highlight** — tint the selected thumbnail's outline with any color.
 6. **Simple API** — a single `PhotoViewer` driven by a `selectedIndex` binding.
 
@@ -111,6 +111,13 @@ To match your app's accent, pass a custom `highlightColor` for the selected thum
 ```swift
 PhotoViewer(photos: photos, selectedIndex: $selectedIndex, highlightColor: .orange)
 ```
+
+
+
+## 🌿 Branches
+
+- **`main`** — library source only; what SPM consumers pull, tagged for releases.
+- **`develop`** — `main` plus `PhotoViewerDemo/`, an Xcode demo app used to manually verify changes.
 
 
 
