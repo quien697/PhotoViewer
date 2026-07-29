@@ -47,17 +47,19 @@ A lightweight SwiftUI view for browsing photos full-screen on iOS, from remote U
 
 ## 📦 Installation
 
-### Local Swift Package
+### Swift Package Manager
 
-Clone or copy this repository next to your app, then add it as a local package.
+In Xcode, go to **File → Add Package Dependencies…** and enter the repository URL:
 
-In Xcode: **File → Add Package Dependencies… → Add Local…** and select the `PhotoViewer` folder.
+```
+https://github.com/quien697/PhotoViewer.git
+```
 
-Or reference it by path in your `Package.swift`:
+Or add it to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(path: "../PhotoViewer")
+    .package(url: "https://github.com/quien697/PhotoViewer.git", from: "1.0.0")
 ]
 ```
 
@@ -121,6 +123,17 @@ PhotoViewer/
       ├─ Models/         # PhotoSource
       └─ Views/          # PhotoViewer, PhotoViewerHeader, PhotoViewerFooter, PhotoSourceImage
 ```
+
+
+
+## 📸 Screenshots
+
+<p align="left">
+   <img src="https://github.com/quien697/PhotoViewer/blob/main/Screenshots/photo_viewer-url_tab.png?raw=true" alt="Gallery with remote URL photos" width="200" />
+   <img src="https://github.com/quien697/PhotoViewer/blob/main/Screenshots/photo_viewer-url_viewer.png?raw=true" alt="Full-screen viewer for a remote URL photo" width="200" />
+   <img src="https://github.com/quien697/PhotoViewer/blob/main/Screenshots/photo_viewer-uiimage_tab.png?raw=true" alt="Gallery with in-memory UIImages" width="200" />
+   <img src="https://github.com/quien697/PhotoViewer/blob/main/Screenshots/photo_viewer-uiimage_viewer.png?raw=true" alt="Full-screen viewer for an in-memory UIImage" width="200" />
+</p>
 
 
 

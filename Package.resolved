@@ -1,0 +1,15 @@
+{
+  "originHash" : "af2522047b7867d5f9d7911c594c289ae764e6a07718c7fb152a30950bcfddac",
+  "pins" : [
+    {
+      "identity" : "cachedasyncimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/quien697/CachedAsyncImage.git",
+      "state" : {
+        "revision" : "6b9090d3b02fb5cdd0dd18c6b1b5d240fa2834c1",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}

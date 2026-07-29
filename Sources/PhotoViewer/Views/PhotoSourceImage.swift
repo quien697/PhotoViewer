@@ -5,6 +5,7 @@
 //  Created by Quien on 2026-06-02.
 //
 
+import CachedAsyncImage
 import SwiftUI
 
 /// Renders a `PhotoSource`, loading remote URLs asynchronously and showing
@@ -17,13 +18,15 @@ struct PhotoSourceImage<Placeholder: View>: View {
   var body: some View {
     switch source {
     case .url(let string):
-      AsyncImage(url: URL(string: string)) { phase in
-        if case .success(let image) = phase {
-          image
-            .resizable()
-            .aspectRatio(contentMode: contentMode)
-        } else {
-          placeholder()
+      GeometryReader { proxy in
+        CachedAsyncImage(url: URL(string: string), targetSize: proxy.size) { phase in
+          if case .success(let image) = phase {
+            image
+              .resizable()
+              .aspectRatio(contentMode: contentMode)
+          } else {
+            placeholder()
+          }
         }
       }
     case .image(let uiImage):
